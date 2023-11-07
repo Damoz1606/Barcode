@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik');
+
+:root {
+    --background-color: #ffc04c;
+    --text-color: #343434;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--background-color);
+}
+
+svg * {
+    color: var(--background-color);
+    fill: var(--background-color);
+}
+
+.container {
+    padding: 30px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 355px;
+    padding-bottom: 5px;
+}
+
+.container.active {
+    padding-bottom: 35px;
+}
+
+.container .app-title {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.form-group {
+    width: 100%;
+    position: relative;
+}
+
+.container input {
+    all: unset;
+    height: 40px;
+    width: 100%;
+    border-bottom: 2px solid var(--text-color);
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.container .form-group .line {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 2px;
+    width: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: var(--background-color);
+    transition: width .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.container .form-group input:focus+.line {
+    width: 100%;
+}
+
+.container button {
+    all: unset;
+    height: 45px;
+    width: 100%;
+    background-color: var(--background-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    border-radius: 3px;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.container button:hover {
+    background-color: white;
+    color: var(--background-color);
+}
+
+.container .barcode-box {
+    height: 0px;
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 3px;
+    transition: all .2s;
+}
+
+.container.active .barcode-box {
+    height: 200px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    transition: all .2s;
+}
+
+.container.active .barcode-box #barcode {
+    position: absolute;
+    left: 12%;
+    height: 165px;
+    width: 270px;
+    margin-top: 15px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h3 class="app-title">Barcode Generator</h3>
+        <form class="barcode-generator-form">
+            <div class="form-group">
+                <input type="text" placeholder="Enter text or URL" />
+                <span class="line"></span>
+            </div>
+            <button type="submit" class="generate-btn">Generate</button>
+        </form>
+        <div class="barcode-box">
+            <svg id="barcode"></svg>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.min.js"
+    integrity="sha512-QEAheCz+x/VkKtxeGoDq6nsGyzTx/0LMINTgQjqZ0h3+NjP+bCsPYz3hn0HnBkGmkIFSr7QcEZT+KyEM7lbLPQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="index.js"></script>
+
+</html>
