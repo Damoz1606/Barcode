@@ -3,6 +3,8 @@
 :root {
     --background-color: #ffc04c;
     --text-color: #343434;
+
+    --tab-size: 100px;
 }
 
 * {
@@ -19,6 +21,89 @@ body {
 svg * {
     color: var(--background-color);
     fill: var(--background-color);
+}
+
+.fixed {
+    position: fixed;
+}
+
+.left {
+    left: 0;
+}
+
+.top {
+    top: 0;
+}
+
+.tab-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabs {
+    display: flex;
+    position: relative;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem;
+    margin: 0.25rem;
+    border-radius: 99px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: var(--tab-size);
+    font-weight: 500;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio] {
+    &:checked {
+        &+label {
+            color: var(--background-color);
+        }
+    }
+}
+
+input[id=radio-1] {
+    &:checked {
+        &~.glider {
+            transform: translate(0%, -50%);
+        }
+    }
+}
+
+input[id=radio-2] {
+    &:checked {
+        &~.glider {
+            transform: translate(100%, -50%);
+        }
+    }
+}
+
+.glider {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 5%;
+    height: 25px;
+    width: var(--tab-size);
+    transform: translate(0%, -50%);
+    background-color: var(--background-color);
+    opacity: .25;
+    border-radius: 99px;
+    transition: transform 0.25s ease-in-out;
 }
 
 .container {
@@ -94,25 +179,45 @@ svg * {
     color: var(--background-color);
 }
 
-.container .barcode-box {
+.container .code-box {
     height: 0px;
     width: 100%;
     margin-top: 25px;
     border-radius: 3px;
     transition: all .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container.active .barcode-box {
+.container.active .code-box {
     height: 200px;
     border: 2px solid grey;
     border-radius: 5px;
     transition: all .2s;
 }
 
-.container.active .barcode-box #barcode {
+.container.active .code-box #barcode{
     position: absolute;
     left: 12%;
     height: 165px;
     width: 270px;
     margin-top: 15px;
+}
+
+.none {
+    display: none;
+}
+
+
+.container .code-box #qrcode {
+    margin: 0;
+    width: 0;
+    height: 0;
+}
+
+.container.active .code-box #qrcode {
+    position: absolute;
+    width: 150px;
+    height: 150px;
 }

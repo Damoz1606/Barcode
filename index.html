@@ -4,11 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barcode Generator</title>
+    <title>Qr-Bar Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <div class="fixed top left">
+        <div class="tabs">
+            <input type="radio" name="tabs" id="radio-1" checked>
+            <label class="tab" for="radio-1">
+                Bar Code
+            </label>
+
+            <input type="radio" name="tabs" id="radio-2">
+            <label class="tab" for="radio-2">
+                QR Code
+            </label>
+
+            <div class="glider"></div>
+        </div>
+    </div>
 
     <div class="container">
         <h3 class="app-title">Barcode Generator</h3>
@@ -19,8 +35,9 @@
             </div>
             <button type="submit" class="generate-btn">Generate</button>
         </form>
-        <div class="barcode-box">
+        <div class="code-box">
             <svg id="barcode"></svg>
+            <img id="qrcode" class="none"></img>
         </div>
     </div>
 
